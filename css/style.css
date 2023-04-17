@@ -467,6 +467,8 @@ img{
 .button--flex{
     display: inline-flex;
     align-items: center;
+    margin:1rem;
+    
 }
 
 
@@ -890,7 +892,7 @@ img{
 
 
 /*================== PORTFOLIO ==================*/
-.portfolio__container{
+/* .portfolio__container{
     overflow: initial;
 }
 
@@ -939,17 +941,17 @@ img{
 
 .swiper-button-next{
     right: -.5rem;
-}
+} */
 
 /* non capisco perchè non funziona. Si dovrebbero abbassare i tre punti più giù */
-.swiper-container-horizontal > .swiper-pagination-bullets {
+/* .swiper-container-horizontal > .swiper-pagination-bullets {
     bottom: 2.5rem;
-  }
+  } */
   /* rispetto al bottone 'Demo' */
 
 
 
-.swiper-pagination-bullet-active{
+/* .swiper-pagination-bullet-active{
     background-color: var(--first-color);
 }
 
@@ -959,21 +961,24 @@ img{
 .swiper-button-next,
 .swiper-pagination-bullet{
     outline: none;
-}
+} */
 
 
 
 
 
 /*================== PROJECT IN MIND ==================*/
-.project{
+/* .project{
     text-align: center;
+   
 }
 
 .project__bg{
     background-color: var(--first-color-second);
-    padding-top: 3rem;
+    padding-top: 20rem;
+    height: calc(100% + 50px);
 }
+
 
 .project__title{
     font-size: var(--h2-font-size);
@@ -992,10 +997,28 @@ img{
 
 
 .project__img{
-    width: 232px;
-    justify-self: center;
+    position: absolute;
+  transform: translate(-50%, -50%);
+  max-width: 150%;
+  max-height: 150%;
+  margin-top: 12rem;
+
 }
 
+  /* Altezza minima per il contenitore quando lo schermo è piccolo */
+  @media screen and (max-width: 480px) {
+    .project__container {
+      min-height: 500px;
+    }
+  }
+  
+.project__container {
+  position: relative;
+  width: 100%;
+  min-height: 1000px;
+  overflow: hidden;
+  z-index: 1;
+} */
 
 
 
@@ -1532,3 +1555,44 @@ img{
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .project__bg {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .project__container {
+      position: relative;
+    }
+    .project__data {
+      background-color: #6B3E9B;
+      padding: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .project__img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+  }
+  
+
+
+
+
+
+
